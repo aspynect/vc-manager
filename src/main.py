@@ -108,10 +108,10 @@ async def sync(interaction: discord.Interaction):
     print("Sunk!")
 
 
-#TODO loop to check on anchor users/check if any non-assigned users are in the vc and close/update accordingly
 @tasks.loop(minutes = 1)
 async def checkVC():
-    for session in sessions:
+    for sessionID in sessions:
+        session = sessions[sessionID]
         sessionAnchor: discord.Member = session["anchor"]
         channelUsers: list[discord.Member] = session["channel"].members
         sessionUsers: list[discord.Member] = session["users"]

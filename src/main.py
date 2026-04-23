@@ -110,7 +110,7 @@ async def sync(interaction: discord.Interaction):
 
 @tasks.loop(minutes = 1)
 async def checkVC():
-    for sessionID in sessions:
+    for sessionID in sessions.keys():
         session = sessions[sessionID]
         sessionAnchor: discord.Member = session["anchor"]
         channelUsers: list[discord.Member] = session["channel"].members

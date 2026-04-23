@@ -74,7 +74,7 @@ class SessionSetupView(discord.ui.View):
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=False, private_channels=True)
 @tree.command(name="start-session",description="Start a session")
-async def sync(interaction: discord.Interaction):
+async def startSession(interaction: discord.Interaction):
     await interaction.response.send_message(view = SessionSetupView(), ephemeral = True)
 
 

@@ -70,6 +70,7 @@ class SessionSetupView(discord.ui.View):
         self.stop()
 
 
+@app_commands.checks.has_permissions(administrator = True)
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=False, private_channels=True)
 @tree.command(name="start-session",description="Start a session")

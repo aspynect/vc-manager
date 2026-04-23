@@ -87,7 +87,6 @@ async def addUser(interaction: discord.Interaction, user: discord.User):
         await interaction.response.send_message(f"Added <@{user.id}> to session", ephemeral = True)
 
 
-
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=False, private_channels=True)
 @tree.command(name="remove-user",description="Remove user from session")
